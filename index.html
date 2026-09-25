@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Demo/preview site: a fictional business used as a portfolio sample by
+         Artur Dymchevskyi. It is not a real company. The "noindex" directive
+         below is what keeps these pages out of search results; see robots.txt. -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
     <title>
       Sterling Build Co. — Quality Renovations & New Builds Across the GTA
     </title>
@@ -19,10 +23,9 @@
       content="Licensed & insured general contractor serving the GTA. Kitchen & bath renovations, home additions, custom decks. 12 years of experience. Get your free estimate today."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sterlingbuildco.ca/" />
     <meta
       property="og:image"
-      content="https://sterlingbuildco.ca/PLACEHOLDER-og-image.jpg"
+      content="hero-background.jpg"
     />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -59,51 +62,27 @@
       };
     </script>
     <!-- Google Analytics GA4 -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
-    <!-- JSON-LD LocalBusiness Schema -->
+            <!-- JSON-LD LocalBusiness Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "CreativeWork",
         "name": "Sterling Build Co.",
-        "description": "Quality craftsmanship for renovations and new builds across the GTA. Kitchen & bathroom renovations, home additions, custom decks, and general contracting.",
-        "image": "https://sterlingbuildco.ca/PLACEHOLDER-og-image.jpg",
-        "telephone": "(416) 555-0173",
-        "email": "quotes@sterlingbuildco.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "875 Dupont St",
-          "addressLocality": "Toronto",
-          "addressRegion": "ON",
-          "addressCountry": "CA"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "07:00",
-          "closes": "17:00"
-        },
-        "url": "https://sterlingbuildco.ca",
-        "sameAs": [
-          "https://www.instagram.com/sterlingbuildco",
-          "https://www.linkedin.com/company/sterlingbuildco"
-        ],
-        "priceRange": "$$"
+        "description": "A demo contractor website built as a portfolio sample by Artur Dymchevskyi. The business, its address, phone number, prices, reviews and testimonials are all fictional, and this page is deliberately kept out of search results.",
+        "genre": "Website design demo",
+        "inLanguage": "en-CA",
+        "creator": {
+          "@type": "Person",
+          "name": "Artur Dymchevskyi",
+          "jobTitle": "Fullstack Developer",
+          "email": "arturdymschevskyi@gmail.com",
+          "url": "https://github.com/Artur25072001"
+        }
       }
     </script>
   </head>
   <body class="font-body text-gray-800 bg-white antialiased">
+<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://github.com/Artur25072001" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author portfolio and code</a></div>
     <!-- ===== HEADER / NAVIGATION ===== -->
     <header class="sticky top-0 z-50 bg-navy shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -613,7 +592,7 @@
             <h2
               class="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4"
             >
-              What Our Clients Say
+              What Our Clients Say (sample reviews)
             </h2>
             <p class="text-gray-300">
               We let our work — and our clients — do the talking.
@@ -973,9 +952,9 @@
                   />
                 </svg>
                 <a
-                  href="mailto:quotes@sterlingbuildco.ca"
+                  href="mailto:quotes@example.com"
                   class="hover:text-yellow transition-colors"
-                  >quotes@sterlingbuildco.ca</a
+                  >quotes@example.com</a
                 >
               </li>
               <li class="flex items-start gap-2">
