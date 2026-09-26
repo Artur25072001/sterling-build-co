@@ -53,7 +53,7 @@
     <!-- Google Analytics GA4 -->
           </head>
   <body class="font-body text-gray-800 bg-white antialiased">
-<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://github.com/Artur25072001" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author portfolio and code</a></div>
+<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author&rsquo;s portfolio</a></div>
     <!-- ===== HEADER / NAVIGATION ===== -->
     <header class="sticky top-0 z-50 bg-navy shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,13 +190,11 @@
               >
                 Tell Us About Your Project
               </h2>
-              <form
+              <form data-demo-form="true" onsubmit="return false"
                 name="quote"
                 method="POST"
-                data-netlify="true"
                 class="space-y-6"
               >
-                <input type="hidden" name="form-name" value="quote" />
 
                 <!-- Row: Name + Email -->
                 <div class="grid sm:grid-cols-2 gap-6">
@@ -411,7 +409,9 @@
                   We'll never share your information. By submitting, you agree
                   to be contacted about your project. No spam, ever.
                 </p>
-              </form>
+              
+<p data-demo-form-status role="status" aria-live="polite" style="display:none;margin-top:1rem;font-size:0.875rem;line-height:1.6;"></p>
+</form>
             </div>
 
             <!-- Sidebar Column -->
@@ -816,5 +816,26 @@
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
     </script>
-  </body>
+  <script>
+  /* Demo form: presentational only. Nothing is transmitted and no message is
+     sent anywhere, so there is no form endpoint behind this page. */
+  (function () {
+    var message =
+      "Thanks \u2014 this is a demo form, so nothing was actually sent. On a live site your message would reach the business.";
+    Array.prototype.forEach.call(
+      document.querySelectorAll("form[data-demo-form]"),
+      function (form) {
+        var status = form.querySelector("[data-demo-form-status]");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (status) {
+            status.textContent = message;
+            status.style.display = "block";
+          }
+          form.reset();
+        });
+      }
+    );
+  })();
+</script></body>
 </html>
